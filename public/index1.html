@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSocket Chat Test</title>
+  <style>
+    #chat {
+      width: 300px;
+      height: 400px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow-y: scroll;
+      margin-bottom: 10px;
+    }
+    #messageInput {
+      width: 100%;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="chat"></div>
+  <input id="messageInput" type="text" placeholder="Type your message..." />
+
+  <script>
+    // Create a WebSocket connection using the correct path
+    const socket = new WebSocket('ws://localhost:3000/api/chat');
+
+    const chatDiv = document.getElementById('chat');
+    const messageInput = document.getElementById('messageInput');
+
+    // Listen for messages from the server
+    socket.addEventListener('message', function (event) {
+      const message = JSON.parse(event.data);
+      const messageElement = document.createElement('div');
+      messageElement.textContent = message.content; // Assuming the message has a `content` field
+      chatDiv.appendChild(messageElement);
+      chatDiv.scrollTop = chatDiv.scrollHeight; // Scroll to the bottom
+    });
+
+    // Send a message when the user types and presses Enter
+    messageInput.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        const message = {
+          content: messageInput.value,
+          profileId: 'your-profile-id', // Replace with real profileId
+          channelId: 'your-channel-id' // Replace with real channelId
+        };
+        socket.send(JSON.stringify(message));
+        messageInput.value = ''; // Clear input
+      }
+    });
+
+    // Handle WebSocket connection open
+    socket.addEventListener('open', function () {
+      console.log('Connected to the WebSocket server');
+    });
+
+    // Handle WebSocket connection close
+    socket.addEventListener('close', function () {
+      console.log('Disconnected from the WebSocket server');
+    });
+  </script>
+
+</body>
+</html>
