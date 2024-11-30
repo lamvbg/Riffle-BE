@@ -1,4 +1,4 @@
-import { SettingRepository } from '@cores/repositories/setting.repository';
+import { SettingRepository } from '../../cores/repositories/setting.repository';
 import { Injectable } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 

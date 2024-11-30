@@ -3,7 +3,7 @@ import { ProfileService } from './profile.service';
 import { ProfileController } from './profile.controller';
 import { ProfileRepository } from '../../cores/repositories/profile.repository';
 import { PrismaService } from '../../cores/dao/prisma.service';
-import { ServerRepository } from '@cores/repositories/server.repository';
+import { ServerRepository } from '../../cores/repositories/server.repository';
 
 @Module({
   imports: [],

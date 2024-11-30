@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { MemberRepository } from '../../cores/repositories/member.repository';
 import { Prisma, MemberRole } from '@prisma/client';
-import { ServerRepository } from '@cores/repositories/server.repository';
+import { ServerRepository } from '../../cores/repositories/server.repository';
 import { ProfileService } from '../profile/profile.service';
-import { PrismaService } from '@cores/dao/prisma.service';
+import { PrismaService } from '../../cores/dao/prisma.service';
 
 @Injectable()
 export class MemberService {

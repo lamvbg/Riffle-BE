@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { BaseRepoAbstraction } from "./base-repo.abstraction";
 import { Prisma, Setting } from "@prisma/client";
-import { PrismaService } from "@cores/dao/prisma.service";
+import { PrismaService } from "../../cores/dao/prisma.service";
 
 @Injectable()
 export class SettingRepository extends BaseRepoAbstraction<

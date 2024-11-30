@@ -1,6 +1,6 @@
-import { PrismaService } from '@cores/dao/prisma.service';
-import { MemberNotificationRepository } from '@cores/repositories/member-notification.repository';
-import { NotificationRepository } from '@cores/repositories/notification.repository';
+import { PrismaService } from '../../../cores/dao/prisma.service';
+import { MemberNotificationRepository } from '../../../cores/repositories/member-notification.repository';
+import { NotificationRepository } from '../../../cores/repositories/notification.repository';
 import { Injectable } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 

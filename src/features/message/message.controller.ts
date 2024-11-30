@@ -10,6 +10,11 @@ export class MessageController {
     private readonly profileService: ProfileService,
   ) {}
 
+  @Get('/allMess')
+  async getAllMessage() {
+    return this.messageService.getAllMessage();
+  }
+
   @Get()
   async getMessages(
     @Query('channelId') channelId: string,

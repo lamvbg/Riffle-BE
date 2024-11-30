@@ -4,7 +4,7 @@ import { PrismaService } from '../../cores/dao/prisma.service';
 import { ProfileService } from '../profile/profile.service';
 import * as jwt from 'jsonwebtoken';
 import { GoogleProfile } from 'passport-google-oauth20';
-import { ProfileRepository } from '@cores/repositories/profile.repository';
+import { ProfileRepository } from '../../cores/repositories/profile.repository';
 
 @Injectable()
 export class AuthService {

@@ -10,7 +10,7 @@ import {
 import { Server, Socket } from 'socket.io';
 import { ChatService } from './chat.service';
 import { NotificationService } from '../notification/notification.service';
-import { AuthService } from 'src/features/auth/auth.service';
+import { AuthService } from '../../../features/auth/auth.service';
 
 @WebSocketGateway({ namespace: '/chat', cors: { origin: '*' } })
 export class ChatGateway

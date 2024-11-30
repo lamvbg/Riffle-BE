@@ -10,6 +10,10 @@ export class MessageService {
     private readonly profileService: ProfileService,
   ) {}
 
+  async getAllMessage(): Promise<Message[]> {
+    return this.prismaService.message.findMany();
+  }
+
   // Get messages with optional cursor for pagination
   async getMessages(channelId: string, profileId: string, cursor?: string): Promise<{ items: Message[], nextCursor: string | null }> {
     // Validate profile existence

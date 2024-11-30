@@ -6,8 +6,8 @@ import { JwtStrategy } from './strategy/jwt.strategy';
 import { PrismaService } from '../../cores/dao/prisma.service';
 import { AuthController } from './auth.controller';
 import { ProfileService } from '../profile/profile.service';
-import { ProfileRepository } from '@cores/repositories/profile.repository';
-import { ServerRepository } from '@cores/repositories/server.repository';
+import { ProfileRepository } from '../../cores/repositories/profile.repository';
+import { ServerRepository } from '../../cores/repositories/server.repository';
 import { GoogleStrategy } from './strategy/google.strategy';
 
 @Module({

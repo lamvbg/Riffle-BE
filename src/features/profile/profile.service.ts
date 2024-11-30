@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ProfileRepository } from '../../cores/repositories/profile.repository';
 import { Prisma, Profile } from '@prisma/client';
-import { ServerRepository } from '@cores/repositories/server.repository';
+import { ServerRepository } from '../../cores/repositories/server.repository';
 import * as crypto from 'crypto';
 
 @Injectable()

@@ -3,7 +3,7 @@ import { Prisma, MemberRole, Server, ChannelType, Channel  } from '@prisma/clien
 import { ChannelRepository } from '../../cores/repositories/channel.repository';
 import { ServerRepository } from '../../cores/repositories/server.repository';
 import { ProfileService } from '../profile/profile.service';
-import { PaginationModel } from '@cores/models/pagination.model';
+import { PaginationModel } from '../../cores/models/pagination.model';
 
 @Injectable()
 export class ChannelService {
